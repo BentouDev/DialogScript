@@ -1,0 +1,22 @@
+{
+	"name": "dialogscript",
+	"description": "DialogScript language server in node.",
+	"version": "0.0.1",
+	"author": "Jakub Bentkowski",
+	"license": "MIT",
+	"engines": {
+		"node": "*"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/MrJaqbq/DialogScript"
+	},
+	"dependencies": {
+		"vscode-languageserver": "^3.4.2"
+	},
+	"scripts": {
+		"installServer": "installServerIntoExtension ../client ./package.json ./tsconfig.json",
+		"compile": "installServerIntoExtension ../client ./package.json ./tsconfig.json && tsc -p .",
+		"watch": "installServerIntoExtension ../client ./package.json ./tsconfig.json && tsc -w -p ."
+	}
+}

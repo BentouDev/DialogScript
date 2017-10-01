@@ -3,11 +3,31 @@
     "version": "0.1.0",
     "configurations": [
         {
+			"name": "Attach to Server",
+			"type": "node",
+			"request": "attach",
+			"port": 6009,
+			"sourceMaps": true,
+			"outFiles": [
+				"${workspaceRoot}/client/server/**/*.js"
+			],
+            "protocol": "inspector"
+		},
+        {
             "name": "Launch Extension",
             "type": "extensionHost",
             "request": "launch",
             "runtimeExecutable": "${execPath}",
             "args": ["--extensionDevelopmentPath=/home/bentoo/Projekty/DialogScript/dialogscript" ]
         }
-    ]
+    ],
+	"compounds": [
+		{
+			"name": "Full Debug",
+			"configurations": [
+				"Launch Extension",
+				"Attach to Server"
+			]
+		}
+	]
 }

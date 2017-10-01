@@ -4,23 +4,55 @@
     "description": "Bentoo's dialog script syntax highlighting",
     "version": "0.0.1",
     "publisher": "Bentoo",
+    "author": "Jakub Bentkowski",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/MrJaqbq/DialogScript"
+    },
     "engines": {
         "vscode": "^1.16.0"
     },
     "categories": [
         "Languages"
     ],
+    "activationEvents": [
+        "onLanguage:dialogscript"
+    ],
+    "main": "./client/out/src/extension",
     "contributes": {
-        "languages": [{
-            "id": "dialogscript",
-            "aliases": ["DialogScript", "dialogscript"],
-            "extensions": [".dialog"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "dialogscript",
-            "scopeName": "source.dialogscript",
-            "path": "./syntaxes/dialogscript.tmLanguage.json"
-        }]
+        "languages": [
+            {
+                "id": "dialogscript",
+                "aliases": [
+                    "DialogScript",
+                    "dialogscript"
+                ],
+                "extensions": [
+                    ".dialog"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "dialogscript",
+                "scopeName": "source.dialogscript",
+                "path": "./syntaxes/dialogscript.tmLanguage.json"
+            }
+        ]
+    },
+    "scripts": {
+        "postinstall": "cd server && npm install && cd ../client && npm install && cd ..",
+        "compile": "tsc -p client/tsconfig.json && cd server && npm run installServer && cd .. && tsc -p server/tsconfig.json",
+        "compile:client": "tsc -p client/tsconfig.json",
+        "watch:client": "tsc -w -p client/tsconfig.json",
+        "compile:server": "cd server && npm run installServer && cd .. && tsc -p server/tsconfig.json",
+        "watch:server": "cd server && npm run installServer && cd .. && tsc -w -p server/tsconfig.json"
+    },
+    "devDependencies": {
+        "@types/mocha": "^2.2.42",
+        "@types/node": "^6.0.88",
+        "typescript": "^2.5.2"
     }
 }
