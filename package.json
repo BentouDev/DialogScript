@@ -2,7 +2,7 @@
     "name": "dialogscript",
     "displayName": "DialogScript",
     "description": "Bentoo's dialog script syntax highlighting",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "publisher": "Bentoo",
     "author": "Jakub Bentkowski",
     "license": "MIT",
