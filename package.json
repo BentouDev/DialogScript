@@ -6,6 +6,11 @@
     "publisher": "Bentoo",
     "author": "Jakub Bentkowski",
     "license": "MIT",
+    "icon": "logo.png",
+    "galleryBanner": {
+        "color": "#AA00BB",
+        "theme": "dark"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/MrJaqbq/DialogScript"
