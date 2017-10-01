@@ -1,0 +1,26 @@
+{
+    "name": "dialogscript",
+    "displayName": "DialogScript",
+    "description": "Bentoo's dialog script syntax highlighting",
+    "version": "0.0.1",
+    "publisher": "Bentoo",
+    "engines": {
+        "vscode": "^1.16.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "dialogscript",
+            "aliases": ["DialogScript", "dialogscript"],
+            "extensions": [".dialog"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "dialogscript",
+            "scopeName": "source.dialogscript",
+            "path": "./syntaxes/dialogscript.tmLanguage.json"
+        }]
+    }
+}

@@ -1,0 +1,59 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "DialogScript",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comments"
+		}
+	],
+	"repository": {
+		"comments" :{
+			"patterns": [{
+				"name":"comment.line.number-sign.dialogscript",
+				"match": "#.*?$"
+			}]
+		},
+		"keywords": {
+			"patterns": [{
+				"name":"keyword.control.dialogscript",
+				"match":"[\n\r]*say\\s([^\"\n\r]*)",
+				"captures": {
+					"1" : {"name":"variable.language.dialogscript"}
+				}
+			},{
+				"name": "header.dialogscript",
+				"match": "\\bstart\\b"
+			},{
+				"name": "keyword.control.dialogscript",
+				"match": "\\b(if|while|for|return)\\b"
+			},{
+				"name": "keyword.operator.new.dialogscript",
+				"match": "\\b(topic|menu)\\b"
+			},{
+				"name": "entity.name.type.dialogscript",
+				"match": "\\b(actor|event|function)\\b"
+			},{
+				"name": "entity.name.function.dialogscript",
+				"match": "\\b(exit|goto|invoke)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.dialogscript",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.dialogscript",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.dialogscript"
+}
